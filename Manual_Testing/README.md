@@ -1,125 +1,128 @@
-# Manual Testing Documentation - KantinGKM
+# KantinGKM – Dokumentasi Manual Software Testing
 
-> **Software Testing Portfolio** for Implementation and Testing of Information Systems Course  
-> Mobile Application: [KantinGKM](https://github.com/dimassypp/KantinGKM)
+Repositori ini berisi dokumentasi pengujian perangkat lunak secara manual pada aplikasi mobile KantinGKM. Pengujian difokuskan pada manual black-box testing dan manual white-box testing yang dilakukan pada fitur serta method tertentu dalam sistem.
 
----
+Repositori ini disusun untuk menunjukkan:
+- Penerapan praktik manual software testing secara terstruktur
+- Penyusunan test case dan skenario uji yang jelas
+- Analisis logika program menggunakan pendekatan white-box testing
 
-## Project Overview
-
-**Application Name:** KantinGKM  
-**Platform:** Android Mobile Application  
-**Purpose:** Food ordering system for Faculty of Computer Science canteen to digitize the manual ordering process
-
-**Key Features Tested:**
-- User Registration (Buyer)
-- Stock Management (Seller - updateMenuStock method)
+Repositori ini tidak merepresentasikan keseluruhan siklus QA industri, melainkan dokumentasi pengujian yang dilakukan dalam lingkup terbatas dan terdefinisi.
 
 ---
 
-## Testing Scope
+## Gambaran Umum Aplikasi
 
-### 1. Black-box Testing
-
-**Focus:** Functional Testing - User Registration Feature  
-**Objective:** Validate input handling, error messages, and registration flow
-
-**Test Coverage:**
-- Valid input scenarios
-- Empty field validation
-- Email format validation
-- Password length validation
-- Special character handling
-
-**Documentation:** [black_box_testing/user-registration.md](black_box_testing/user-registration.md)
+KantinGKM merupakan aplikasi pemesanan makanan berbasis mobile yang dirancang untuk lingkungan Kantin Fakultas Ilmu Komputer (FILKOM). Aplikasi ini memungkinkan pengguna untuk melakukan registrasi, melihat menu, melakukan pemesanan, serta mendukung pengelolaan stok menu oleh penjual secara digital.
 
 ---
 
-### 2. White-box Testing
+## Ruang Lingkup Pengujian
 
-**Focus:** Basis Path Testing - updateMenuStock() Method  
-**Objective:** Ensure all independent paths are executed and tested
+Pengujian yang dilakukan dalam repositori ini bersifat terbatas dan terfokus, dengan rincian sebagai berikut:
 
-**Technique:** Cyclomatic Complexity Analysis
-- **Nodes (N):** 11
-- **Edges (E):** 14
-- **Cyclomatic Complexity (V(G)):** 5
-- **Independent Paths Identified:** 5 paths
+### Termasuk
 
-**Documentation:** [white_box_testing/updateMenuStock.md](white_box_testing/updateMenuStock.md)
+- Manual black-box functional testing pada fitur yang berinteraksi langsung dengan pengguna
+- Manual white-box testing (basis path testing) pada method tertentu di sisi backend
+- Identifikasi dan dokumentasi defect serta perilaku sistem yang relevan
 
----
+### Tidak Termasuk
 
-## Test Summary
+- Automated testing
+- Performance atau load testing
+- Security testing
+- End-to-end testing
+- User Acceptance Testing (UAT)
 
-| Metric | Value |
-|--------|-------|
-| **Total Test Cases** | 12 |
-| **Passed** | 8 |
-| **Failed** | 4 |
-| **Pass Rate** | 66.67% |
-| **Defects Found** | 3 |
-| **Critical Bugs** | 0 |
-| **Major Bugs** | 2 |
-| **Minor Bugs** | 1 |
-
-### Test Execution Period
-
-**Date:** June 20-23, 2025  
-**Duration:** 4 days  
-**Test Type:** Manual Testing
+Seluruh temuan dan kesimpulan dibuat berdasarkan ruang lingkup pengujian ini dan tidak digeneralisasi ke keseluruhan sistem.
 
 ---
 
-## Defects Found
+## Sistem yang Diuji
 
-| Bug ID | Severity | Module | Status | Description |
-|--------|----------|--------|--------|-------------|
-| [BUG-001](defects/BUG-001-validation-early-return.md) | Major | User Registration | Open | Validation does not show all field errors simultaneously |
-| [BUG-002](defects/BUG-002-invalid-email-format.md) | Major | User Registration | Open | Application accepts invalid email formats with special characters |
-| [BUG-003](defects/BUG-003-misleading-toast.md) | Minor | User Registration | Open | Success toast message is unclear or not displayed properly |
-
----
-
-## Tools & Environment
-
-### Testing Environment
-
-- **Device Type:** Android Emulator
-- **Android API Level:** 33 (Android 13)
-- **Build Tools:** Android Studio
-- **Backend:** Firebase Authentication & Realtime Database
-
-### Testing Tools
-
-- Manual Testing (UI/Functional)
-- Android Logcat (for debugging)
-- Firebase Console (database verification)
-
-### Documentation Tools
-
-- Markdown
-- Git & GitHub
-- Draw.io (for flow diagrams)
+| Aspek | Deskripsi |
+|-------|-----------|
+| Platform | Aplikasi Mobile Android |
+| Backend | Firebase Realtime Database |
+| Autentikasi | Firebase Authentication |
+| Bahasa Pemrograman | Java |
+| Jenis Pengujian | Manual Testing |
 
 ---
 
-## Tester Information
-
-**Name:** T. Afifah Nashwa
-**Course:** Implementation and Testing of Information Systems  
-**Institution:** Faculty of Computer Science
+## Struktur Repositori
+```
+Manual_Testing/
+│
+├── README.md
+│
+├── white_box_testing/
+│   ├── updateMenuStock.md
+│   └── control-flow-graph.png
+│
+├── black_box_testing/
+│   └── user-registration.md
+│
+└── defects.md
+```
 
 ---
 
-## Related Links
+## White-box Testing
 
-- **Mobile App Repository:** [github.com/dimassypp/KantinGKM](https://github.com/dimassypp/KantinGKM)
-- **Test Plan:** [test_plan.md](test_plan.md)
-- **Bug Reports:** [defects/](defects/)
+White-box testing dilakukan secara manual menggunakan metode Basis Path Testing pada method `updateMenuStock()`.
+
+Aktivitas pengujian meliputi:
+- Analisis kode sumber
+- Penyusunan Control Flow Graph (CFG)
+- Perhitungan Cyclomatic Complexity
+- Identifikasi jalur eksekusi independen
+- Penyusunan test case berdasarkan setiap jalur
+
+Analisis difokuskan pada kebenaran logika dan potensi kegagalan, tanpa melakukan perubahan terhadap kode sumber.
+
+**Dokumentasi lengkap tersedia pada:** [white_box_testing/updateMenuStock.md](white_box_testing/updateMenuStock.md)
 
 ---
 
-This testing documentation is created as part of academic coursework and professional portfolio development. All tests were conducted manually following industry-standard QA practices including STLC (Software Testing Life Cycle) and functional testing methodologies.
+## Black-box Testing
 
-**Last Updated:** June 23, 2025
+Black-box testing dilakukan secara manual pada fitur Registrasi Pengguna.
+
+Pendekatan pengujian mencakup:
+- Skenario input valid dan tidak valid
+- Verifikasi respons sistem terhadap spesifikasi yang diharapkan
+- Observasi terhadap mekanisme validasi dan pesan kesalahan
+
+Hasil pengujian didokumentasikan secara jelas, termasuk status eksekusi dan catatan berdasarkan perilaku aktual sistem.
+
+**Dokumentasi lengkap tersedia pada:** [black_box_testing/user-registration.md](black_box_testing/user-registration.md)
+
+---
+
+## Defect dan Temuan
+
+Defect yang ditemukan selama pengujian didokumentasikan berdasarkan:
+- Perilaku aktual sistem
+- Perilaku yang diharapkan
+- Dampak terhadap fungsionalitas
+
+Tidak seluruh kasus gagal diklasifikasikan sebagai bug implementasi, karena beberapa dipengaruhi oleh batasan atau perilaku bawaan layanan Firebase.
+
+**Lihat detail pada:** [defects.md](defects.md)
+
+---
+
+## Catatan
+
+- Seluruh pengujian dilakukan secara manual
+- Dokumentasi ini disusun dalam konteks pembelajaran dan portofolio
+- Hasil pengujian terbatas pada fitur dan method yang diuji
+- Kesimpulan tidak mewakili kualitas keseluruhan aplikasi
+
+---
+
+## Penulis
+
+Dokumentasi Manual Software Testing
