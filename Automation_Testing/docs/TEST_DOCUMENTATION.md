@@ -11,7 +11,7 @@ Dokumen ini berisi hasil testing terhadap fungsi login pada aplikasi demo Applit
 - **Metode**: Automation Testing
 - **Framework**: Selenium WebDriver + Pytest
 - **Browser**: Google Chrome (latest version)
-- **Tanggal Eksekusi**: 31 Desember 2025
+- **Bulan Eksekusi**: Desember 2025
 - **Tester**: T. Afifah Nashwa
 
 ---
