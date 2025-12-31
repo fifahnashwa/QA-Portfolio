@@ -65,7 +65,7 @@ Dokumen ini berisi hasil testing terhadap fungsi login pada aplikasi demo Applit
 | Validation Test | 0 | 3 | 3 |
 | UI Test | 2 | 0 | 2 |
 
-### Screenshot Hasil Eksekusi
+### Hasil Eksekusi
 ```
 ========================================================== test session starts ==========================================================
 platform win32 -- Python 3.10.6, pytest-9.0.2, pluggy-1.6.0
