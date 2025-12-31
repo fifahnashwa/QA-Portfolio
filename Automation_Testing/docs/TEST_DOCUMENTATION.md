@@ -149,9 +149,7 @@ Aplikasi tidak melakukan validasi input pada saat tombol Sign In diklik. User da
 ### Keterbatasan Testing
 1. **Environment Terbatas**: Testing hanya dilakukan pada environment Chrome browser Windows. Belum diuji pada browser lain (Firefox, Safari, Edge) atau sistem operasi lain.
 
-2. **Demo Application**: Website yang diuji adalah aplikasi demo yang mungkin sengaja dibuat tanpa validasi penuh untuk tujuan pembelajaran testing.
-
-3. **No Access to Requirements**: Tanpa akses ke dokumen requirement atau specification asli, beberapa perilaku mungkin merupakan desain yang disengaja.
+2. **Demo Application**: Website yang diuji adalah aplikasi demo untuk tujuan pembelajaran testing.
 
 ### Asumsi Testing
 - Username valid yang digunakan: "admin"
