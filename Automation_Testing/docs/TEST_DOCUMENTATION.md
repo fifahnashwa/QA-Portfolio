@@ -1,6 +1,6 @@
 # Dokumentasi Testing - Login Functionality
 
-## 📋 Test Overview
+## Test Overview
 
 ### Deskripsi
 Dokumen ini berisi hasil testing terhadap fungsi login pada aplikasi demo Applitools (https://demo.applitools.com/). Testing dilakukan menggunakan automation testing dengan framework Selenium WebDriver dan Pytest.
@@ -11,47 +11,40 @@ Dokumen ini berisi hasil testing terhadap fungsi login pada aplikasi demo Applit
 - **Metode**: Automation Testing
 - **Framework**: Selenium WebDriver + Pytest
 - **Browser**: Google Chrome (latest version)
-- **Tanggal Eksekusi**: [Sesuaikan dengan tanggal Anda menjalankan test]
-- **Tester**: [Nama Anda]
+- **Tanggal Eksekusi**: 31 Desember 2025
+- **Tester**: T. Afifah Nashwa
 
 ---
 
-## 🎯 Test Scope
+## Test Scope
 
-### Yang Termasuk dalam Testing (In Scope)
-- ✅ Login dengan kredensial valid (positive case)
-- ✅ Login dengan kredensial invalid (negative case)
-- ✅ Validasi field kosong (empty field validation)
-- ✅ Validasi elemen UI (checkbox, button)
-- ✅ Perilaku aplikasi terhadap berbagai input user
-
-### Yang Tidak Termasuk (Out of Scope)
-- ❌ Security testing (SQL injection, XSS, dll)
-- ❌ Performance testing (load time, stress test)
-- ❌ Cross-browser testing (hanya Chrome)
-- ❌ Mobile responsive testing
-- ❌ API testing
+### Yang Termasuk dalam Testing
+- Login dengan kredensial valid (positive case)
+- Login dengan kredensial invalid (negative case)
+- Validasi field kosong (empty field validation)
+- Validasi elemen UI (checkbox, button)
+- Perilaku aplikasi terhadap berbagai input user
 
 ---
 
-## 📊 Test Case Summary
+## Test Case Summary
 
 ### Tabel Test Cases
 
 | ID | Skenario Test | Langkah Pengujian | Expected Result | Actual Result | Status | Priority |
 |----|---------------|-------------------|-----------------|---------------|--------|----------|
-| TC-001 | Login dengan kredensial valid | 1. Buka halaman login<br>2. Input username: "admin"<br>3. Input password: "password"<br>4. Klik tombol Sign In | User berhasil login dan diarahkan ke halaman app | User berhasil login, URL berubah ke app.html | ✅ PASS | High |
-| TC-002 | Login dengan username invalid | 1. Buka halaman login<br>2. Input username: "invaliduser"<br>3. Input password: "password"<br>4. Klik tombol Sign In | Muncul error message, user tidak dapat login | Tidak muncul error message, user tetap bisa login | ❌ FAIL | High |
-| TC-003 | Login dengan password invalid | 1. Buka halaman login<br>2. Input username: "admin"<br>3. Input password: "wrongpassword"<br>4. Klik tombol Sign In | Muncul error message, user tidak dapat login | Tidak muncul error message, user tetap bisa login | ❌ FAIL | High |
-| TC-004 | Login dengan field kosong | 1. Buka halaman login<br>2. Tidak input apapun<br>3. Klik tombol Sign In | Login ditolak, user tetap di halaman login | User berhasil login meskipun field kosong | ❌ FAIL | Medium |
-| TC-005 | Login dengan username kosong | 1. Buka halaman login<br>2. Kosongkan username<br>3. Input password: "password"<br>4. Klik tombol Sign In | Login ditolak, validasi username wajib diisi | User berhasil login meskipun username kosong | ❌ FAIL | Medium |
-| TC-006 | Login dengan password kosong | 1. Buka halaman login<br>2. Input username: "admin"<br>3. Kosongkan password<br>4. Klik tombol Sign In | Login ditolak, validasi password wajib diisi | User berhasil login meskipun password kosong | ❌ FAIL | Medium |
-| TC-007 | Fungsi Remember Me checkbox | 1. Buka halaman login<br>2. Cari checkbox "Remember Me"<br>3. Klik checkbox | Checkbox dapat diklik dan berubah state | Checkbox berfungsi dengan baik | ✅ PASS | Low |
-| TC-008 | Status tombol Sign In | 1. Buka halaman login<br>2. Periksa tombol Sign In | Tombol Sign In selalu aktif dan dapat diklik | Tombol Sign In aktif dan dapat diklik | ✅ PASS | Low |
+| TC-001 | Login dengan kredensial valid | 1. Buka halaman login<br>2. Input username: "admin"<br>3. Input password: "password"<br>4. Klik tombol Sign In | User berhasil login dan diarahkan ke halaman app | User berhasil login, URL berubah ke app.html | PASS | High |
+| TC-002 | Login dengan username invalid | 1. Buka halaman login<br>2. Input username: "invaliduser"<br>3. Input password: "password"<br>4. Klik tombol Sign In | Muncul error message, user tidak dapat login | Tidak muncul error message, user tetap bisa login | FAIL | High |
+| TC-003 | Login dengan password invalid | 1. Buka halaman login<br>2. Input username: "admin"<br>3. Input password: "wrongpassword"<br>4. Klik tombol Sign In | Muncul error message, user tidak dapat login | Tidak muncul error message, user tetap bisa login | FAIL | High |
+| TC-004 | Login dengan field kosong | 1. Buka halaman login<br>2. Tidak input apapun<br>3. Klik tombol Sign In | Login ditolak, user tetap di halaman login | User berhasil login meskipun field kosong | FAIL | Medium |
+| TC-005 | Login dengan username kosong | 1. Buka halaman login<br>2. Kosongkan username<br>3. Input password: "password"<br>4. Klik tombol Sign In | Login ditolak, validasi username wajib diisi | User berhasil login meskipun username kosong | FAIL | Medium |
+| TC-006 | Login dengan password kosong | 1. Buka halaman login<br>2. Input username: "admin"<br>3. Kosongkan password<br>4. Klik tombol Sign In | Login ditolak, validasi password wajib diisi | User berhasil login meskipun password kosong | FAIL | Medium |
+| TC-007 | Fungsi Remember Me checkbox | 1. Buka halaman login<br>2. Cari checkbox "Remember Me"<br>3. Klik checkbox | Checkbox dapat diklik dan berubah state | Checkbox berfungsi dengan baik | PASS | Low |
+| TC-008 | Status tombol Sign In | 1. Buka halaman login<br>2. Periksa tombol Sign In | Tombol Sign In selalu aktif dan dapat diklik | Tombol Sign In aktif dan dapat diklik | PASS | Low |
 
 ---
 
-## 📈 Test Execution Summary
+## Test Execution Summary
 
 ### Ringkasan Hasil
 
@@ -92,7 +85,7 @@ automation/test_login.py::TestLogin::test_login_button_enabled PASSED           
 
 ---
 
-## 🔍 Validation Gaps Identified During Login Testing
+## Validation Gaps Identified During Login Testing
 
 Selama proses testing, beberapa celah validasi input teridentifikasi. Perilaku-perilaku ini dapat berdampak pada pengalaman pengguna dan sebaiknya diperbaiki untuk memberikan feedback yang lebih jelas saat login gagal.
 
@@ -151,7 +144,7 @@ Aplikasi tidak melakukan validasi input pada saat tombol Sign In diklik. User da
 
 ---
 
-## 📝 Notes / Catatan Tambahan
+## Catatan Tambahan
 
 ### Keterbatasan Testing
 1. **Environment Terbatas**: Testing hanya dilakukan pada environment Chrome browser Windows. Belum diuji pada browser lain (Firefox, Safari, Edge) atau sistem operasi lain.
