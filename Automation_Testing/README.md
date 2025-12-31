@@ -1,137 +1,152 @@
-# Automation Testing - Login Functionality
+# Automation Testing – Login Functionality
 
-## 📖 Deskripsi
-Repository ini berisi automation testing untuk fungsi login menggunakan Selenium WebDriver dengan Python dan Pytest framework. Testing dilakukan pada website demo Applitools untuk mendemonstrasikan kemampuan automation testing dan identifikasi celah validasi.
+Dokumentasi ini mencakup automation testing terhadap fungsi login pada aplikasi demo menggunakan Selenium WebDriver dan Pytest framework.
 
-**Website Under Test**: [Applitools Demo](https://demo.applitools.com/)
+Pengujian difokuskan pada identifikasi celah validasi input dan verifikasi perilaku login functionality secara menyeluruh.
 
----
-
-## 🎯 Cakupan Testing
-- ✅ Login dengan kredensial valid (positive case)
-- ✅ Login dengan kredensial invalid (negative case)
-- ✅ Validasi input kosong (empty field validation)
-- ✅ Validasi elemen UI (checkbox, button)
-- ✅ Identifikasi celah validasi
+**Catatan:** Dokumentasi ini mencakup scope pengujian terbatas yang terdefinisi, bukan representasi QA lifecycle lengkap.
 
 ---
 
-## 📋 Test Cases
+## Aplikasi yang Diuji
 
-| ID | Test Case | Tipe | Priority | Status |
-|----|-----------|------|----------|--------|
-| TC-001 | Login dengan kredensial valid | Positive | High | ✅ PASS |
-| TC-002 | Login dengan username invalid | Negative | High | ❌ FAIL* |
-| TC-003 | Login dengan password invalid | Negative | High | ❌ FAIL* |
-| TC-004 | Login dengan field kosong | Negative | Medium | ❌ FAIL* |
-| TC-005 | Login dengan username kosong | Boundary | Medium | ❌ FAIL* |
-| TC-006 | Login dengan password kosong | Boundary | Medium | ❌ FAIL* |
-| TC-007 | Fungsi Remember Me checkbox | UI | Low | ✅ PASS |
-| TC-008 | Status tombol login | UI | Low | ✅ PASS |
+**Applitools Demo** - Aplikasi demo untuk praktik automation testing
 
-**Total**: 8 test cases | **Passed**: 3 (37.5%) | **Failed**: 5 (62.5%)
-
-*Test yang failed menunjukkan celah validasi yang teridentifikasi pada aplikasi. Detail lengkap ada di [dokumentasi testing](docs/TEST_DOCUMENTATION.md).
+Link Aplikasi: [demo.applitools.com](https://demo.applitools.com/)
 
 ---
 
-## 🛠️ Tech Stack
-- **Python** 3.10+
-- **Selenium WebDriver** - Browser automation
-- **Pytest** - Testing framework
-- **WebDriver Manager** - Automatic driver management
+## Scope Pengujian
+
+### Yang Diuji:
+* Login dengan kredensial valid (positive case)
+* Login dengan kredensial invalid (negative case)
+* Validasi input kosong (empty field validation)
+* Elemen UI (checkbox, button state)
+* Error message handling
 
 ---
 
-## 📁 Struktur Project
+## Struktur Dokumentasi
 ```
-automation-login-testing/
-├── venv/                           # Virtual environment (tidak di-upload ke GitHub)
+Automation_Testing/
+├── README.md
 ├── automation/
-│   └── test_login.py              # Test suite dengan 8 test cases
+│   └── test_login.py
 ├── docs/
-│   └── TEST_DOCUMENTATION.md      # Dokumentasi testing lengkap
-├── requirements.txt                # Dependencies Python
-├── .gitignore                     # File yang diabaikan Git
-└── README.md                      # Dokumentasi project (file ini)
+│   └── TEST_DOCUMENTATION.md
+└── requirements.txt
 ```
-
-### Penjelasan File:
-- **`automation/test_login.py`**: Berisi semua test cases untuk fungsi login menggunakan Pytest framework dengan proper assertions dan WebDriverWait
-- **`docs/TEST_DOCUMENTATION.md`**: Dokumentasi lengkap hasil testing termasuk test cases, findings, dan rekomendasi
-- **`requirements.txt`**: Daftar package Python yang diperlukan
-- **`.gitignore`**: Konfigurasi file yang tidak perlu di-upload ke repository
 
 ---
 
-## 🚀 Setup & Instalasi
+## Hasil Pengujian
 
-### Prerequisites:
-- Python 3.7 atau lebih tinggi
-- pip (Python package manager)
-- Google Chrome browser
+### Test Case Summary
 
-### Langkah Instalasi:
+| Metrik | Jumlah | Persentase |
+|--------|--------|------------|
+| Total Test Cases | 8 | 100% |
+| Passed | 3 | 37.5% |
+| Failed | 5 | 62.5% |
 
-#### 1. Clone Repository
+📄 [Lihat detail lengkap](docs/TEST_DOCUMENTATION.md)
+
+---
+
+### Findings Summary
+
+| ID | Severity | Area |
+|----|----------|------|
+| FIND-001 | Medium | Tidak ada error message untuk invalid credentials |
+| FIND-002 | Medium | Aplikasi mengizinkan login dengan field kosong |
+
+📄 [Lihat detail findings](docs/TEST_DOCUMENTATION.md#-validation-gaps-identified-during-login-testing)
+
+---
+
+## Testing Environment
+
+* **Platform:** Web
+* **Browser:** Google Chrome (latest version)
+* **Framework:** Selenium WebDriver + Pytest
+* **Language:** Python 3.10+
+* **Approach:** Automation Testing
+
+**Tester:** T. Afifah Nashwa
+**Periode:** Desember 2025
+
+---
+
+## Setup dan Instalasi
+
+### Prerequisites
+
+* Python 3.7 atau lebih tinggi
+* pip (Python package manager)
+* Google Chrome browser
+
+### Langkah Instalasi
+
+**1. Clone repository**
 ```bash
-git clone <url-repository-anda>
-cd automation-login-testing
+git clone <url-repository>
+cd QA-Portfolio/Automation_Testing
 ```
 
-#### 2. Buat Virtual Environment (Recommended)
+**2. Buat virtual environment (direkomendasikan)**
 
-**Windows:**
+Windows:
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-**Mac/Linux:**
+Mac/Linux:
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-Tanda berhasil: Command prompt Anda akan menampilkan `(venv)` di awal.
-
-#### 3. Install Dependencies
+**3. Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-Ini akan menginstall:
-- selenium
-- webdriver-manager
-- pytest
-
 ---
 
-## ▶️ Cara Menjalankan Test
+## Menjalankan Test
 
-### Menjalankan Semua Test:
+### Perintah dasar:
 ```bash
 pytest automation/test_login.py -v
 ```
 
-### Menjalankan dengan Output Detail:
+### Opsi lainnya:
+
+Dengan output detail:
 ```bash
 pytest automation/test_login.py -v -s
 ```
 
-### Menjalankan Test Case Spesifik:
+Test case spesifik:
 ```bash
 pytest automation/test_login.py::TestLogin::test_valid_login -v
 ```
 
-### Generate HTML Report:
+Generate HTML report:
 ```bash
 pytest automation/test_login.py --html=report.html
 ```
 
+### Deactivate virtual environment:
+```bash
+deactivate
+```
+
 ---
 
-## 📊 Hasil Testing
+## Output Hasil Testing
 ```
 ========================================================== test session starts ==========================================================
 platform win32 -- Python 3.10.6, pytest-9.0.2, pluggy-1.6.0
@@ -149,120 +164,14 @@ automation/test_login.py::TestLogin::test_login_button_enabled PASSED           
 ================================================ 5 failed, 3 passed in 67.26s =================================================
 ```
 
-**Catatan**: Test yang failed mengidentifikasi celah validasi pada aplikasi. Ini menunjukkan kemampuan testing dalam menemukan potential issues. Lihat [dokumentasi lengkap](docs/TEST_DOCUMENTATION.md) untuk detail findings.
+**Catatan:** Test yang failed mengidentifikasi celah validasi pada aplikasi. Detail findings tersedia di [dokumentasi lengkap](docs/TEST_DOCUMENTATION.md).
 
 ---
 
-## 🔍 Key Features
+## Dokumentasi Lengkap
 
-✅ **Professional test structure** menggunakan Pytest framework  
-✅ **Explicit waits** dengan WebDriverWait (tidak menggunakan time.sleep)  
-✅ **Proper assertions** untuk semua test cases  
-✅ **Clean code** dengan penamaan test case yang jelas  
-✅ **Comprehensive coverage** untuk login functionality  
-✅ **Dokumentasi lengkap** dalam Bahasa Indonesia
+Untuk detail test cases, findings, dan rekomendasi:
+
+📘 [TEST_DOCUMENTATION.md](docs/TEST_DOCUMENTATION.md)
 
 ---
-
-## 📝 Pendekatan Testing
-
-- **Framework**: Pytest
-- **Wait Strategy**: Explicit waits menggunakan WebDriverWait
-- **Assertion**: Built-in Python assert dengan error message yang jelas
-- **Browser**: Chrome (dikelola otomatis oleh webdriver-manager)
-- **Test Design**: Independent test cases dengan setup/teardown fixtures
-
----
-
-## 🔄 Deactivate Virtual Environment
-
-Setelah selesai testing, keluar dari virtual environment:
-```bash
-deactivate
-```
-
----
-
-## 📌 Catatan Penting
-
-- Test berjalan pada Chrome browser secara default
-- Setiap test case bersifat independen (tidak ada dependency antar test)
-- Browser otomatis dibersihkan setelah setiap test
-- WebDriver dikelola otomatis (tidak perlu download driver manual)
-- Untuk mengaktifkan virtual environment setiap kali membuka terminal baru, jalankan command activate seperti di langkah instalasi
-
----
-
-## 📄 Dokumentasi Tambahan
-
-Untuk dokumentasi testing lengkap termasuk test cases detail, findings, dan rekomendasi, silakan baca:
-- 📘 [Dokumentasi Testing Lengkap](docs/TEST_DOCUMENTATION.md)
-
----
-
-## 👨‍💻 Author
-
-**[Nama Anda]**  
-QA Testing Portfolio | [LinkedIn](link-anda) | [Email](email-anda)
-
----
-
-## 📫 Contact & Feedback
-
-Jika ada pertanyaan atau saran terkait project ini, silakan hubungi melalui:
-- Email: [email-anda]
-- LinkedIn: [linkedin-anda]
-
----
-
-**Project ini dibuat untuk keperluan portfolio dan demonstrasi kemampuan automation testing.**
-```
-
----
-
-## 📁 **3. `.gitignore`**
-```
-# Virtual Environment
-venv/
-env/
-ENV/
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-
-# Pytest
-.pytest_cache/
-.coverage
-htmlcov/
-*.html
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Test outputs
-screenshots/
-reports/
-```
-
----
-
-## 📁 **4. `requirements.txt`**
-```
-selenium
-webdriver-manager
-pytest
