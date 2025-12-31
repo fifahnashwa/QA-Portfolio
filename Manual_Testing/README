@@ -1,1 +1,119 @@
+# Manual Testing Documentation - KantinGKM
 
+> **Software Testing Portfolio** for Implementation and Testing of Information Systems Course  
+> Mobile Application: [KantinGKM](https://github.com/dimassypp/KantinGKM)
+
+---
+
+## Project Overview
+
+**Application Name:** KantinGKM  
+**Platform:** Android Mobile Application  
+**Purpose:** Food ordering system for Faculty of Computer Science canteen to digitize the manual ordering process
+
+**Key Features Tested:**
+- User Registration (Buyer)
+- Stock Management (Seller - updateMenuStock method)
+
+---
+
+## Testing Scope
+
+### 1. Black-box Testing
+**Focus:** Functional Testing - User Registration Feature  
+**Objective:** Validate input handling, error messages, and registration flow
+
+**Test Coverage:**
+- Valid input scenarios
+- Empty field validation
+- Email format validation
+- Password length validation
+- Special character handling
+
+**Documentation:** [black_box_testing/user-registration.md](black_box_testing/user-registration.md)
+
+---
+
+### 2. White-box Testing
+**Focus:** Basis Path Testing - updateMenuStock() Method  
+**Objective:** Ensure all independent paths are executed and tested
+
+**Technique:** Cyclomatic Complexity Analysis
+- **Nodes (N):** 11
+- **Edges (E):** 14
+- **Cyclomatic Complexity (V(G)):** 5
+- **Independent Paths Identified:** 5 paths
+
+**Documentation:** [white_box_testing/updateMenuStock.md](white_box_testing/updateMenuStock.md)
+
+---
+
+## Test Summary
+
+| Metric | Value |
+|--------|-------|
+| **Total Test Cases** | 12 |
+| **Passed** | 8 |
+| **Failed** | 4 |
+| **Pass Rate** | 66.67% |
+| **Defects Found** | 3 |
+| **Critical Bugs** | 0 |
+| **Major Bugs** | 2 |
+| **Minor Bugs** | 1 |
+
+### Test Execution Period
+**Date:** June 20-23, 2025  
+**Duration:** 4 days  
+**Test Type:** Manual Testing
+
+---
+
+## Defects Found
+
+| Bug ID | Severity | Module | Status | Description |
+|--------|----------|--------|--------|-------------|
+| [BUG-001](defects/BUG-001-validation-early-return.md) | Major | User Registration | Open | Validation does not show all field errors simultaneously |
+| [BUG-002](defects/BUG-002-invalid-email-format.md) | Major | User Registration | Open | Application accepts invalid email formats with special characters |
+| [BUG-003](defects/BUG-003-misleading-toast.md) | Minor | User Registration | Open | Success toast message is unclear or not displayed properly |
+
+---
+
+## Tools & Environment
+
+### Testing Environment
+- **Device Type:** Android Emulator
+- **Android API Level:** 33 (Android 13)
+- **Build Tools:** Android Studio
+- **Backend:** Firebase Authentication & Realtime Database
+
+### Testing Tools
+- Manual Testing (UI/Functional)
+- Android Logcat (for debugging)
+- Firebase Console (database verification)
+
+### Documentation Tools
+- Markdown
+- Git & GitHub
+- Draw.io (for flow diagrams)
+```
+
+---
+
+## Tester Information
+
+**Name:** T. Afifah Nashwa 
+**Course:** Implementation and Testing of Information Systems  
+**Institution:** Faculty of Computer Science
+
+---
+
+## 🔗 Related Links
+
+- **Mobile App Repository:** [github.com/dimassypp/KantinGKM](https://github.com/dimassypp/KantinGKM)
+- **Test Plan:** [test_plan.md](test_plan.md)
+- **Bug Reports:** [defects/](defects/)
+
+---
+
+This testing documentation is created as part of academic coursework and professional portfolio development. All tests were conducted manually following industry-standard QA practices including STLC (Software Testing Life Cycle) and functional testing methodologies.
+**Last Updated:** June 23, 2025
