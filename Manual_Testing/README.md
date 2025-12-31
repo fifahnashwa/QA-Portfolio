@@ -1,128 +1,98 @@
 # KantinGKM – Dokumentasi Manual Software Testing
 
-Repositori ini berisi dokumentasi pengujian perangkat lunak secara manual pada aplikasi mobile KantinGKM. Pengujian difokuskan pada manual black-box testing dan manual white-box testing yang dilakukan pada fitur serta method tertentu dalam sistem.
+> Dokumentasi ini disusun sebagai bagian dari portfolio profesional untuk mendemonstrasikan praktik manual software testing yang terstruktur pada aplikasi mobile KantinGKM.
 
-Repositori ini disusun untuk menunjukkan:
-- Penerapan praktik manual software testing secara terstruktur
-- Penyusunan test case dan skenario uji yang jelas
-- Analisis logika program menggunakan pendekatan white-box testing
+Pengujian dilakukan pada aplikasi yang dikembangkan dalam konteks proyek akademik, dengan dokumentasi disusun ulang untuk menunjukkan praktik manual software testing secara profesional.
 
-Repositori ini tidak merepresentasikan keseluruhan siklus QA industri, melainkan dokumentasi pengujian yang dilakukan dalam lingkup terbatas dan terdefinisi.
+Pengujian difokuskan pada dua pendekatan:
+- **Functional Testing** (black-box) pada fitur registrasi
+- **Path Analysis** (basis path testing) pada fungsi stock management
 
----
-
-## Gambaran Umum Aplikasi
-
-KantinGKM merupakan aplikasi pemesanan makanan berbasis mobile yang dirancang untuk lingkungan Kantin Fakultas Ilmu Komputer (FILKOM). Aplikasi ini memungkinkan pengguna untuk melakukan registrasi, melihat menu, melakukan pemesanan, serta mendukung pengelolaan stok menu oleh penjual secara digital.
+**Catatan:** Dokumentasi ini mencakup scope pengujian terbatas yang terdefinisi, bukan representasi QA lifecycle lengkap.
 
 ---
 
-## Ruang Lingkup Pengujian
+## Aplikasi yang Diuji
 
-Pengujian yang dilakukan dalam repositori ini bersifat terbatas dan terfokus, dengan rincian sebagai berikut:
+**KantinGKM** - Aplikasi pemesanan makanan berbasis mobile untuk Kantin Fakultas Ilmu Komputer (FILKOM)
 
-### Termasuk
+**Link Repositori:** [github.com/dimassypp/KantinGKM](https://github.com/dimassypp/KantinGKM)
 
-- Manual black-box functional testing pada fitur yang berinteraksi langsung dengan pengguna
-- Manual white-box testing (basis path testing) pada method tertentu di sisi backend
-- Identifikasi dan dokumentasi defect serta perilaku sistem yang relevan
+---
 
-### Tidak Termasuk
+## Scope Pengujian
 
+**Yang Diuji:**
+- Fitur Registrasi Pengguna (functional testing)
+- Logika Update Stock (path analysis)
+
+**Tidak Diuji:**
+- Fitur lain dalam aplikasi
+- Performance, security, atau load testing
 - Automated testing
-- Performance atau load testing
-- Security testing
-- End-to-end testing
-- User Acceptance Testing (UAT)
-
-Seluruh temuan dan kesimpulan dibuat berdasarkan ruang lingkup pengujian ini dan tidak digeneralisasi ke keseluruhan sistem.
 
 ---
 
-## Sistem yang Diuji
+## Struktur Dokumentasi
 
-| Aspek | Deskripsi |
-|-------|-----------|
-| Platform | Aplikasi Mobile Android |
-| Backend | Firebase Realtime Database |
-| Autentikasi | Firebase Authentication |
-| Bahasa Pemrograman | Java |
-| Jenis Pengujian | Manual Testing |
-
----
-
-## Struktur Repositori
 ```
 Manual_Testing/
-│
 ├── README.md
-│
-├── white_box_testing/
-│   ├── updateMenuStock.md
-│   └── control-flow-graph.png
-│
-├── black_box_testing/
+├── functional_testing/
 │   └── user-registration.md
-│
+├── path_analysis/
+│   ├── stock-update-logic.md
+│   └── flow-diagram.png
 └── defects.md
 ```
 
 ---
 
-## White-box Testing
+## Hasil Pengujian
 
-White-box testing dilakukan secara manual menggunakan metode Basis Path Testing pada method `updateMenuStock()`.
+### Functional Testing
+- **Test Case:** 12
+- **Pass Rate:** 66.67%
+- **Defect:** 3 ditemukan
 
-Aktivitas pengujian meliputi:
-- Analisis kode sumber
-- Penyusunan Control Flow Graph (CFG)
-- Perhitungan Cyclomatic Complexity
-- Identifikasi jalur eksekusi independen
-- Penyusunan test case berdasarkan setiap jalur
+📄 [Lihat detail](functional_testing/user-registration.md)
 
-Analisis difokuskan pada kebenaran logika dan potensi kegagalan, tanpa melakukan perubahan terhadap kode sumber.
+### Path Analysis
+- **Cyclomatic Complexity:** 5
+- **Path Coverage:** 100% (5/5 jalur)
+- **Defect:** 0
 
-**Dokumentasi lengkap tersedia pada:** [white_box_testing/updateMenuStock.md](white_box_testing/updateMenuStock.md)
-
----
-
-## Black-box Testing
-
-Black-box testing dilakukan secara manual pada fitur Registrasi Pengguna.
-
-Pendekatan pengujian mencakup:
-- Skenario input valid dan tidak valid
-- Verifikasi respons sistem terhadap spesifikasi yang diharapkan
-- Observasi terhadap mekanisme validasi dan pesan kesalahan
-
-Hasil pengujian didokumentasikan secara jelas, termasuk status eksekusi dan catatan berdasarkan perilaku aktual sistem.
-
-**Dokumentasi lengkap tersedia pada:** [black_box_testing/user-registration.md](black_box_testing/user-registration.md)
+📄 [Lihat detail](path_analysis/stock-update-logic.md)
 
 ---
 
-## Defect dan Temuan
+## Defect Summary
 
-Defect yang ditemukan selama pengujian didokumentasikan berdasarkan:
-- Perilaku aktual sistem
-- Perilaku yang diharapkan
-- Dampak terhadap fungsionalitas
+| ID | Severity | Area |
+|----|----------|------|
+| BUG-001 | Major | Validasi form tidak menampilkan semua error |
+| BUG-002 | Major | Format email tidak divalidasi |
+| BUG-003 | Minor | Feedback sukses tidak jelas |
 
-Tidak seluruh kasus gagal diklasifikasikan sebagai bug implementasi, karena beberapa dipengaruhi oleh batasan atau perilaku bawaan layanan Firebase.
+📄 [Lihat detail](defects.md)
 
-**Lihat detail pada:** [defects.md](defects.md)
+---
+
+## Testing Environment
+
+- **Platform:** Android API 33
+- **Device:** Emulator
+- **Backend:** Firebase
+- **Approach:** Manual Testing
+
+**Tester:** T. Afifah Nashwa  
+**Period:** Juni 2025
 
 ---
 
 ## Catatan
-
-- Seluruh pengujian dilakukan secara manual
-- Dokumentasi ini disusun dalam konteks pembelajaran dan portofolio
-- Hasil pengujian terbatas pada fitur dan method yang diuji
-- Kesimpulan tidak mewakili kualitas keseluruhan aplikasi
+Observasi dan kesimpulan dibuat berdasarkan scope terbatas dan tidak merepresentasikan kualitas keseluruhan aplikasi.
 
 ---
 
-## Penulis
-
-Dokumentasi Manual Software Testing
+**Terakhir Diperbarui:** Juni 2025
