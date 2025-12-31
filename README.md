@@ -59,25 +59,25 @@ QA-Portfolio/
 ## Skills Demonstrated
 
 ### Manual Testing
-Test case design & execution  
-Functional testing  
-Path analysis (cyclomatic complexity)  
-Defect identification & documentation  
-Root cause analysis  
+- Test case design & execution  
+- Functional testing  
+- Path analysis (cyclomatic complexity)  
+- Defect identification & documentation  
+- Root cause analysis  
 
 ### Automation Testing
-Selenium WebDriver  
-Pytest framework  
-Test automation design  
-Negative testing  
-Validation gap identification  
+- Selenium WebDriver  
+- Pytest framework  
+- Test automation design  
+- Negative testing  
+- Validation gap identification  
 
 ### General QA Skills
-Structured documentation  
-Test planning  
-Bug reporting  
-Requirements analysis  
-Clear communication  
+- Structured documentation  
+- Test planning  
+- Bug reporting  
+- Requirements analysis  
+- Clear communication  
 
 ---
 
