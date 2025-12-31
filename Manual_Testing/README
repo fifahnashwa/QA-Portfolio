@@ -20,6 +20,7 @@
 ## Testing Scope
 
 ### 1. Black-box Testing
+
 **Focus:** Functional Testing - User Registration Feature  
 **Objective:** Validate input handling, error messages, and registration flow
 
@@ -35,6 +36,7 @@
 ---
 
 ### 2. White-box Testing
+
 **Focus:** Basis Path Testing - updateMenuStock() Method  
 **Objective:** Ensure all independent paths are executed and tested
 
@@ -62,6 +64,7 @@
 | **Minor Bugs** | 1 |
 
 ### Test Execution Period
+
 **Date:** June 20-23, 2025  
 **Duration:** 4 days  
 **Test Type:** Manual Testing
@@ -81,33 +84,35 @@
 ## Tools & Environment
 
 ### Testing Environment
+
 - **Device Type:** Android Emulator
 - **Android API Level:** 33 (Android 13)
 - **Build Tools:** Android Studio
 - **Backend:** Firebase Authentication & Realtime Database
 
 ### Testing Tools
+
 - Manual Testing (UI/Functional)
 - Android Logcat (for debugging)
 - Firebase Console (database verification)
 
 ### Documentation Tools
+
 - Markdown
 - Git & GitHub
 - Draw.io (for flow diagrams)
-```
 
 ---
 
 ## Tester Information
 
-**Name:** T. Afifah Nashwa 
+**Name:** T. Afifah Nashwa
 **Course:** Implementation and Testing of Information Systems  
 **Institution:** Faculty of Computer Science
 
 ---
 
-## 🔗 Related Links
+## Related Links
 
 - **Mobile App Repository:** [github.com/dimassypp/KantinGKM](https://github.com/dimassypp/KantinGKM)
 - **Test Plan:** [test_plan.md](test_plan.md)
@@ -116,4 +121,5 @@
 ---
 
 This testing documentation is created as part of academic coursework and professional portfolio development. All tests were conducted manually following industry-standard QA practices including STLC (Software Testing Life Cycle) and functional testing methodologies.
+
 **Last Updated:** June 23, 2025
