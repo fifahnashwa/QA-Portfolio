@@ -1,6 +1,6 @@
 # QA Testing Portfolio
 
-> Portfolio profesional yang mendemonstrasikan kemampuan software testing melalui pendekatan manual dan automation testing.
+> Mendemonstrasikan kemampuan software testing melalui pendekatan manual dan automation testing.
 
 Portfolio ini mencakup dokumentasi testing terstruktur pada dua aplikasi berbeda dengan metodologi yang berbeda, menunjukkan fleksibilitas dalam pendekatan QA.
 
