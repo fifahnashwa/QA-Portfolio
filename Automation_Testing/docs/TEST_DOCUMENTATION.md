@@ -92,7 +92,7 @@ Selama proses testing, beberapa celah validasi input teridentifikasi. Perilaku-p
 ### Finding 1: Tidak Ada Error Message untuk Invalid Credentials
 
 **Test Case Terkait**: TC-002, TC-003  
-**Severity**: 🟡 Medium  
+**Severity**: Medium  
 **Priority**: High
 
 **Deskripsi**:
@@ -116,7 +116,7 @@ Menambahkan error message yang jelas seperti "Username atau password salah. Sila
 ### Finding 2: Aplikasi Mengizinkan Login dengan Field Kosong
 
 **Test Case Terkait**: TC-004, TC-005, TC-006  
-**Severity**: 🟡 Medium  
+**Severity**: Medium  
 **Priority**: Medium
 
 **Deskripsi**:
